@@ -1,6 +1,6 @@
 import { GlobalConfig } from 'payload/types'
 import { isAdminOrEditor } from '../access/isAdmin'
-import { DescriptionSettingsContactInformation } from '../components/Description'
+import { DescriptionSettingsMetadata, DescriptionSettingsContactInformation } from '../components/Description'
 
 const Settings: GlobalConfig = {
   slug: 'settings',
@@ -42,7 +42,7 @@ const Settings: GlobalConfig = {
     },
     {
       name: 'email',
-      type: 'text',
+      type: 'email',
       label: 'E-Mail',
       required: true,
     },
@@ -62,9 +62,42 @@ const Settings: GlobalConfig = {
       label: 'Tax number. Optional',
     },
     {
+      type: 'ui',
+      name: 'description',
+      admin: {
+        components: {
+          Field: DescriptionSettingsMetadata,
+        },
+      },
+    },
+    {
+      name: 'title',
+      type: 'text',
+      label: 'Title of website',
+      required: true,
+    },
+    {
+      name: 'description',
+      type: 'text',
+      label: 'Short description of website',
+      required: true,
+    },
+    {
+      name: 'author',
+      type: 'text',
+      label: 'Author of website',
+      required: true,
+    },
+    {
+      name: 'keywords',
+      type: 'text',
+      label: 'List of keywords for SEO. Seperate keywords with comma. E.g.: title, wedothis, wedothat',
+      required: true,
+    },
+    {
       name: 'web',
       type: 'text',
-      label: 'Inernet adress of website as URL, wie z.B.: "www.website-name.com"',
+      label: 'Inernet adress of website as URL, e.g. : "www.website-name.com"',
       required: true,
     },
   ],

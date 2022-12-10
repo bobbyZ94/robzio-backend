@@ -1,9 +1,11 @@
 import { buildConfig } from 'payload/config'
 import path from 'path'
-// import Examples from './collections/Examples'
 import Users from './collections/Users'
 import Settings from './collections/Settings'
-import Frontpage from './collections/Frontpage';
+import Frontpage from './collections/Frontpage'
+import Footer from './collections/Footer'
+import Blogposts from './collections/Blogposts'
+import Media from './collections/Media'
 
 export default buildConfig({
   serverURL: 'http://localhost:3000',
@@ -33,11 +35,11 @@ export default buildConfig({
     // },
   },
   collections: [
+    Blogposts,
     Users,
-    // Add Collections here
-    // Examples,
+    Media,
   ],
-  globals: [Frontpage, Settings],
+  globals: [Frontpage, Footer, Settings],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },

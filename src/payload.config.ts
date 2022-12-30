@@ -3,7 +3,6 @@ import path from 'path'
 import Users from './collections/Users'
 import Settings from './collections/Settings'
 import Frontpage from './collections/Frontpage'
-import Footer from './collections/Footer'
 import Blogposts from './collections/Blogposts'
 import Media from './collections/Media'
 
@@ -39,7 +38,7 @@ export default buildConfig({
     Users,
     Media,
   ],
-  globals: [Frontpage, Footer, Settings],
+  globals: [Frontpage, Settings],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
